@@ -1,0 +1,66 @@
+//for simplicity sake with this project the ice cream consumers can't say they aren't online 
+//once they are online they are locked in by commitment once they register to be online
+//also for simplicity once an area has been served no longer can users receive from there 
+
+
+syntax = "proto3";
+
+
+//maybe these are here because we use the same file...
+//I don't see any java files in the directory...
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+
+package main;
+
+service ICCalculatorService {
+ 
+  rpc QueryLocations(LocationStatus) returns (Number) {}
+
+  rpc CalculateDistance(TwoPoints) returns (Number) {} 
+
+  rpc CalculateGasLoss(Number) returns (Number) {}
+
+  rpc CalculateLocationProfit(Number) returns (Number) {}
+
+}
+
+
+message Point {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+//our map will be a cartesian coordinate system
+//0,0 is the bottom left corner and 200, 300 is the top right corner 
+message Rectangle {
+  // One corner of the rectangle.
+  Point lo = 1;
+
+  // The other corner of the rectangle.
+  Point hi = 2;
+}
+
+
+//when we need to compare where the ice cream man is to where he's heading 
+//or if we need to figure out what's the most cost efficient route
+message TwoPoints {
+  Point first = 1;
+  Point second = 2;
+}
+
+message LocationStatus {
+  
+  int32 usersonline = 1;
+
+  Rectangle locationtoserve = 2;
+}
+
+message Number {
+  int32 anumber = 1;
+}
+
+
+
+
