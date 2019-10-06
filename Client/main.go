@@ -12,7 +12,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	//again we provide an alias for our directory
-	pb "google.golang.org/grpc/examples/route_guide/routeguide"
+	pb "github.com/laikas123/IC_Microservices/ProtoFiles/"
 	
 
 	//these are just test credentials found online
