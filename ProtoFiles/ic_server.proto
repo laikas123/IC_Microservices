@@ -14,6 +14,11 @@ option java_outer_classname = "RouteGuideProto";
 
 package main;
 
+
+//note one big thing to realize is the pb.go file has a ICCalculatorServiceClient
+//and a ICCalculatorServiceServer which is important to realize 
+//this is because that way there are methods for each side of the conversation to
+//do work
 service ICCalculatorService {
  
   rpc QueryLocations(LocationStatus) returns (Number) {}
