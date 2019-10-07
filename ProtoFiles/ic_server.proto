@@ -12,7 +12,7 @@ option java_multiple_files = true;
 option java_package = "io.grpc.examples.routeguide";
 option java_outer_classname = "RouteGuideProto";
 
-package main;
+package ic_server;
 
 
 //note one big thing to realize is the pb.go file has a ICCalculatorServiceClient
